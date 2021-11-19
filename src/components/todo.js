@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useState }from "react";
+import { v4 as uuidv4 } from 'uuid';
 
-const Todo = () => {
+export default function Todo() {
+    const initialTodos = ["My first todo", "My second todo"];
+    const [todos, setTodos] = useState(initialTodos);
     return (
         <div className="todoList">
-            <h3>Todos</h3>
-            <div>
-                <input type="checkbox" id="learn" name="learn" />
-                <label for="learn">Learn React</label>
-            </div>
-            <div>
-                <input type="checkbox" id="beAwesome" name="beAwesome" />
-                <label for="beAwesome">Be Awesome!</label>
-            </div>
+         <h3>Todo List</h3>
+            {todos.map((todo) => (
+                <div key={uuidv4()}>
+                    <input type="checkbox" /> 
+                    {todo}
+                </div>
+            ))}
         </div>
+        
     )
+    
 }
 
-export default Todo;
+
 

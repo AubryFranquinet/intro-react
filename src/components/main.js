@@ -1,6 +1,6 @@
 import React from "react";
 
-const Main = () => {
+export default function Main() {
     return (
         <div className="main">
             <div className="addTodo">
@@ -11,5 +11,3 @@ const Main = () => {
     )
 }
 
-
-export default Main;
